@@ -1,15 +1,13 @@
 <?php
 
-    // Declarar as variáveis necessárias para a conexão com o banco de dados........
-    $hostname = "sql102.epizy.com"; //Nome do servidor que se encontra nosso banco de dados
-    $dbname = "epiz_31453952_RIFAS"; //Nome do nosso banco de dados
-    $username = "epiz_31453952"; //Nome do usuário para acesso ao banco de daddos
-    $password = "pM9qN6XY30qv"; //Senha de acesso ao nosso banco de daddos
 
-    try {
-        $pdo = new PDO('mysql:host='.$hostname.';dbname='.$dbname, $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        // echo 'Conexão com banco de dados, realizado com sucesso!!!';
-    }catch(PDOException $e) {
-        echo 'Erro: '.$e->getMessage();
+    $hostname = "sql102.epizy.com"; 
+    $databname = "epiz_31454061_RIFAS"; 
+    $username = "epiz_31454061"; 
+    $password = "qYX6lIw4NTCj"; 
+
+    if($conecta = mysqli_connect($hostname, $username, $password, $databname )){
+        echo 'Conectado ao banco de dados '.$databname.'.....';
+    } else {
+        echo 'Erro: '.mysqli_connect_error();
     }
