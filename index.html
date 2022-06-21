@@ -1,39 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de controle de rifas</title>
+    <title>Sistemas de Rifas</title>
+    <link rel="shortcut icon" href="img/tickets.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="libs/FontAwesome/css/all.css">
 </head>
 
-<body>
-
-    <div class="conteiner">
-        <div class="row justify-content-center">
-            <h3 class="text-center text-secondary">Login</h3>
-            <div class="col-8 col-sm-6 col-md-2">
-                <form>
-                    <div class="form-group mt-3">
-                        <input type="text" class="form-control" placeholder="Endereço de email">
-                    </div>
-                    <div class="form-group mt-3">
-                        <input type="text" class="form-control" placeholder="Senha">
-                    </div>
-                    <div class="d-grid gap-2 mt-3">
-                        <button class="btn btn-outline-danger" type="submit">Button</button>
-                    </div>
-                </form>
-            </div>
+<body class="text-center">
+    <form class="form-signin">
+        <img class="mb-4" src="img/tickets.png" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Faça login</h1>
+        <label class="sr-only">Usuario</label>
+        <input type="email" id="usuario" class="form-control" placeholder="Usuario" required="" autofocus="">
+        <label class="sr-only">Senha</label>
+        <input type="password" id="senha" class="form-control mt-3" placeholder="Senha" required="">
+        <div class="checkbox mb-3">
+            <label>
+            <input type="checkbox" value="remember-me"> Lembrar de mim
+          </label>
         </div>
-    </div>
+        <button class="btn btn-lg btn-warning btn-block" type="submit"><i class="fa-solid fa-right-from-bracket"></i> Login</button>
+    </form>
 
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/bootstrap.js"></script>
 
+</body>
+
+
+<script src="js/jquery-3.6.0.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="libs/FontAwesome/js/all.js"></script>
 </body>
 
 </html>
