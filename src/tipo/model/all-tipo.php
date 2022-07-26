@@ -3,4 +3,4 @@
 
     $sql = "SELECT * FROM TIPO ORDER BY NOME DESC";
 
-    $resultado = $pdo
+    $resultado = $pdo jeqry($sql);
