@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     $('.btn-login').click(function(e) {
         e.preventDefault()
 
@@ -11,11 +12,11 @@ $(document).ready(function() {
             data: dados,
             url: 'src/vendedor/model/login-vendedor.php',
             success: function(dados) {
-                if (dados.tipo === 'success') {
-                    $(location).attr('href', 'sistema.html');
+                if (dados.tipo == 'success') {
+                    $(location).attr('href', 'sistema.html')
                 } else {
                     Swal.fire({
-                        title: 'E-RIFAS',
+                        title: 'Sistema de rifas',
                         text: dados.mensagem,
                         icon: dados.tipo,
                         confirmButtonText: 'OK'
@@ -23,7 +24,6 @@ $(document).ready(function() {
                 }
             }
         })
-
     })
 
 })

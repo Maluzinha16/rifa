@@ -5,19 +5,19 @@ $(document).ready(function() {
         $('.modal-title').empty()
 
 
-        $('.modal-title').append('Adicionar novo comprador')
+        $('.modal-title').append('Adicionar novo promocao')
 
-        $('.modal-body').load('src/comprador/view/form-comprador.html')
+        $('.modal-body').load('src/promocao/view/form-promocao.html')
 
         $('.btn-save').show()
 
         $('.btn-save').attr('data-operation', 'insert')
 
-        $('#modal-comprador').modal('show')
+        $('#modal-promocao').modal('show')
     })
 
     $('.close, #close').click(function(e) {
         e.preventDefault()
-        $('#modal-comprador').modal('hide')
+        $('#modal-promocao').modal('hide')
     })
 })

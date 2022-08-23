@@ -1,9 +1,9 @@
 $(document).ready(function() {
-    $('#table-comprador').DataTable({
+    $('#table-promocao').DataTable({
         "processing": true,
         "serverSide": true,
         "ajax": {
-            "url": "src/comprador/model/list-comprador.php",
+            "url": "src/promocao/model/list-promocao.php",
             "type": "POST"
         },
         "language": {

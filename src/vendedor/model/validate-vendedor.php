@@ -1,17 +1,18 @@
-<?php
+<?php 
 
-session_start();
+    session_start();
 
-if(!isset($_SESSION['NOME']) && !isset($_SESSION['TIPO'])){
-    $dados = array(
-        'tipo' => 'erro',
-        'mensagem' => 'login e/ou senha incorreto.'
-    );
-}else{
-    $dados = array(
-        'tipo' => 'success',
-        'mensagem' => 'Seja bem vindo,' .$_SESSION['NOME']
-    );
-}
+    if(!isset($_SESSION['TIPO']) && !isset($_SESSION['NOME'])){
+        $dados = array(
+            'tipo' => 'error',
+            'mensagem' => 'Você não está autenticado para utilizar o sistema, realize o login.'
+        );
+    } else {
+        $dados = array(
+            'tipo' => 'success',
+            'mensagem' => utf8_encode($_SESSION['NOME']),
+            'tipo_usuario' => $_SESSION['TIPO']
+        );
+    }
 
-echo json_decode($dados);
+    echo json_encode($dados);
