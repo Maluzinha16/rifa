@@ -22,10 +22,21 @@ $(document).ready(function() {
             success: function(dado) {
                 if (dado.tipo == "success") {
                     $('.modal-body').load('src/promocao/view/form-promocao.html', function() {
-                        $('#NOME').val(dado.dados.NOME)
-                        $('#CELULAR').val(dado.dados.CELULAR)
-                        $('#NOME').attr('readonly', 'true')
-                        $('#CELULAR').attr('readonly', 'true')
+                        $('#TITULO').val(dado.dados.TITULO)
+                        $('#DESCRICAO').val(dado.dados.DESCRICAO)
+                        $('#DATA_INICIO').val(dado.dados.DATA_INICIO)
+                        $('#DATA_FIM').val(dado.dados.DATA_FIM)
+                        $('#DATA_SORTEIO').val(dado.dados.DATA_SORTEIO)
+                        $('#ARRECADACAO').val(dado.dados.ARRECADACAO)
+                        $('#VALOR_RIFA').val(dado.dados.VALOR_RIFA)
+                        $('#TITULO').attr('readonly', 'true')
+                        $('#DESCRICAO').attr('readonly', 'true')
+                        $('#DATA_INICIO').attr('readonly', 'true')
+                        $('#DATA_FIM').attr('readonly', 'true')
+                        $('#DATA_SORTEIO').attr('readonly', 'true')
+                        $('#ARRECADACAO').attr('readonly', 'true')
+                        $('#VALOR_RIFA').attr('readonly', 'true')
+                        
                     })
                     $('.btn-save').hide()
                     $('#modal-promocao').modal('show')

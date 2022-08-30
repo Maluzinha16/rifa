@@ -7,7 +7,7 @@
     $requestData = $_REQUEST;
 
     // Verificação de campo obrigatórios do formulário
-    if(empty($requestData['NOME'])){
+    if(empty($requestData['TITULO'])){
         // Caso a variável venha vazia eu gero um retorno de erro do mesmo
         $dados = array(
             "tipo" => 'error',
@@ -22,11 +22,15 @@
         if($operacao == 'insert'){
             // Prepara o comando INSERT para ser executado
             try{
-                $stmt = $pdo->prepare('INSERT INTO PROMOCAO (NOME,CELULAR) VALUES (:a, :b)');
+                $stmt = $pdo->prepare('INSERT INTO PROMOCAO (TITULO, DESCRICAO, DATA_INICIO, DATA_FIM,DATA_SORTEIO,  VALOR_RIFA ) VALUES (:a, :b, :c, :d, :e,  :g)');
                 $stmt->execute(array(
-                    //':a' => utf8_decode($requestData['NOME'])
-                    ':a' => $requestData['NOME'],
-                    ':b' => $requestData['CELULAR']
+                    //':a' => utf8_decode($requestData['TITULO'])
+                    ':a' => $requestData['TITULO'],
+                    ':b' => $requestData['DESCRICAO'],
+                    ':c' => $requestData['DATA_INICIO'],
+                    ':d' => $requestData['DATA_FIM'],
+                    ':e' => $requestData['DATA_SORTEIO'],
+                    ':g' => $requestData['VALOR_RIFA'],
                 ));
                 $dados = array(
                     "tipo" => 'success',
@@ -41,12 +45,16 @@
         } else {
             // Se minha variável operação estiver vazia então devo gerar os scripts de update
             try{
-                $stmt = $pdo->prepare('UPDATE PROMOCAO SET NOME = :a, CELULAR = :b  WHERE ID = :id');
+                $stmt = $pdo->prepare('UPDATE PROMOCAO SET TITULO = :a, DESCRICAO = :b, DATA_INICIO = :c, DATA_FIM = :d, DATA_SORTEIO = :e, VALOR_RIFA = :g  WHERE ID = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
-                     //':a' => utf8_decode($requestData['NOME'])
-                     ':a' => $requestData['NOME'],
-                     ':b' => $requestData['CELULAR']
+                     //':a' => utf8_decode($requestData['TITULO'])
+                     ':a' => $requestData['TITULO'],
+                     ':b' => $requestData['DESCRICAO'],
+                     ':c' => $requestData['DATA_INICIO'],
+                     ':d' => $requestData['DATA_FIM'],
+                     ':e' => $requestData['DATA_SORTEIO'],
+                     ':g' => $requestData['VALOR_RIFA'],
                 ));
                 $dados = array(
                     "tipo" => 'success',
