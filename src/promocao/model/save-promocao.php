@@ -41,7 +41,7 @@
                     "tipo" => 'error',
                     "mensagem" => 'Não foi possível salvar o registro: .'.$e
                 );
-            }
+            } 
         } else {
             // Se minha variável operação estiver vazia então devo gerar os scripts de update
             try{
